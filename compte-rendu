@@ -1,0 +1,335 @@
+////////////////////////////////////////////////////////////////////////////////
+// Question 1
+////////////////////////////////////////////////////////////////////////////////
+a
+	-
+b
+	On a 2 ressources :
+		l'une modélise l'état des paniers
+		l'autre l'état des cabines
+////////////////////////////////////////////////////////////////////////////////
+// Question 2
+////////////////////////////////////////////////////////////////////////////////
+a
+	-
+b
+	-
+c
+Temps		   |états				|paniers				|cabines	
+	      1158 |634.4...............|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
+d
+	-	
+////////////////////////////////////////////////////////////////////////////////
+// Question 3
+////////////////////////////////////////////////////////////////////////////////
+a
+	-
+b
+	cf ctp.c
+c
+	*****************************
+	* PRS - CTP - Loïc Bourgois *
+	*****************************
+	Légende 
+		0 - Etat initial
+		1 - En attente d'un panier
+		2 - En attente d'une cabine
+		3 - Se change
+		4 - Se baigne
+		5 - En attente d'une cabine après baignade
+		6 - Se change après baignade
+		  - Terminé
+
+	33222222222222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+	33222222222222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+	44332222222222222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	44332222222222222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	33442222222222222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	33442222222222222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	33442222222222222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	  332222222222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+	  332222222222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+		2222332222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+		2222332222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+		2222332222222222|  paniers dispos 2/4  |  cabines dispos 0/2  |
+		2222443322222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222443322222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222354421222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222354421222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222354421222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222 53523222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222 53523222222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2222 5 524231222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	...
+		2222 5 524231222|  paniers dispos 0/4  |  cabines dispos 0/2  |
+
+	On bout d'un certain moment, on arrive à une situation de blocage.
+
+d
+	Le blocage est causé par le fait qu'un client va réservé, à son entrée,
+	une cabine même si aucun panier n'est libre.
+	Les clients voulant se rhabiller (ceux qui sont à même de libérer des
+	paniers) sont bloqués à attendre des cabines.
+
+	Il faudrait qu'à l'entrée, le client prenne d'abord un panier, puis
+	une cabine.
+
+////////////////////////////////////////////////////////////////////////////////
+// Question 4
+////////////////////////////////////////////////////////////////////////////////
+a 
+	-
+b
+	cf ctp-v2.c
+c
+	********************************
+	* PRS - CTP V2 - Loïc Bourgois *
+	********************************
+	Légende 
+		0 - Etat initial
+		1 - En attente d'un panier
+		2 - En attente d'une cabine
+		3 - Se change
+		4 - Se baigne
+		5 - En attente d'une cabine après baignade
+		6 - Se change après baignade
+		  - Terminé
+
+	33221111111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	44331111111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	66441111111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+	  662211111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2233111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		2233111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		3344111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		4466111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		66  221111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		    323211111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		    323211111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		    434311111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		    646411111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		     6 622111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        23321111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        23321111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        34431111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        46641111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        5  63211|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        5   4331|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        5   4331|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		        6   6441|  paniers dispos 0/4  |  cabines dispos 0/2  |
+		             662|  paniers dispos 1/4  |  cabines dispos 0/2  |
+		               3|  paniers dispos 3/4  |  cabines dispos 1/2  |
+		               4|  paniers dispos 3/4  |  cabines dispos 2/2  |
+		               4|  paniers dispos 3/4  |  cabines dispos 2/2  |
+		               6|  paniers dispos 3/4  |  cabines dispos 1/2  |
+		                |  paniers dispos 4/4  |  cabines dispos 2/2  |
+////////////////////////////////////////////////////////////////////////////////
+// Question 5
+////////////////////////////////////////////////////////////////////////////////
+Pas le temps, désolé.
+////////////////////////////////////////////////////////////////////////////////
+// Question 6
+////////////////////////////////////////////////////////////////////////////////
+Pas le temps, désolé.
+////////////////////////////////////////////////////////////////////////////////
+// Question 7
+////////////////////////////////////////////////////////////////////////////////
+a
+	#define MY_ALEA(min,max) usleep(1000*(rand()%(max-min)+min))
+b
+	-
+c
+      1078 |00000000000000000000|  paniers dispos 4/4  |  cabines dispos 2/2  |
+      1262 |02010300000020003101|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      1489 |03111400110020013111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      1654 |13111411111121113111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      1795 |14111411111131114111|  paniers dispos 0/4  |  cabines dispos 1/2  |
+      1869 |14111411111131114111|  paniers dispos 0/4  |  cabines dispos 1/2  |
+      1971 |14111611111141114111|  paniers dispos 0/4  |  cabines dispos 1/2  |
+      2058 |14111 11111141114311|  paniers dispos 0/4  |  cabines dispos 1/2  |
+      2182 |15111 11111151116311|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2256 |15111 11111151116311|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2403 |15111 11111161116411|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2527 |15131 1111116111 411|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2593 |15131 1111116111 411|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2735 |16141 111111 111 413|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2831 |16151 111111 111 513|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      2981 |16151 111111 111 614|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3105 |1 161 112111 111 614|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3229 |1 1 1 113111 111 625|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3363 |1 3 1 113111 111  25|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3414 |1 3 1 113111 111  25|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3520 |1 3 1 113111 111  25|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3702 |1 4 1 114111 111  36|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3797 |1 4 3 114111 111  3 |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      3891 |1 4 4 114111 111  4 |  paniers dispos 0/4  |  cabines dispos 2/2  |
+      3960 |1 6 4 114111 111  4 |  paniers dispos 0/4  |  cabines dispos 1/2  |
+      4068 |1 6 5 115111 111  6 |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4134 |1 6 5 115111 111  6 |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4249 |1 6 5 115111 113    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4378 |1   6 115211 113    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4426 |1   6 115211 113    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4480 |1   6 115211 113    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4575 |1   6 116211 114    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4697 |1     31 211 134    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4750 |1     31 211 134    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      4872 |1     31 311 145    |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5002 |1     41 411 146    |  paniers dispos 0/4  |  cabines dispos 1/2  |
+      5117 |1     51 431 16     |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5213 |1     61 441 16     |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5351 |1     61 543 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5410 |1     61 543 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5473 |1     61 543 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5595 |3      1 553 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5716 |3      1 564 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5789 |3      1 564 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      5906 |4      1 664 1      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      6015 |4      1 6 5 3      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      6077 |4      1 6 5 3      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      6201 |4      1 6 6 4      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      6324 |5      3   6 4      |  paniers dispos 0/4  |  cabines dispos 0/2  |
+      6420 |6      3     4      |  paniers dispos 1/4  |  cabines dispos 0/2  |
+      6499 |6      4     4      |  paniers dispos 1/4  |  cabines dispos 1/2  |
+      6573 |6      4     6      |  paniers dispos 1/4  |  cabines dispos 0/2  |
+      6652 |6      5     6      |  paniers dispos 1/4  |  cabines dispos 0/2  |
+      6734 |       6     6      |  paniers dispos 2/4  |  cabines dispos 0/2  |
+      6793 |       6     6      |  paniers dispos 2/4  |  cabines dispos 0/2  |
+      6851 |                    |  paniers dispos 4/4  |  cabines dispos 2/2  |
+d
+	La macro-fonction est plus rapide qu'une fonction classique : en effet, à 
+	la compilation, le code est totalement dupliqué.
+////////////////////////////////////////////////////////////////////////////////
+// Question 8
+////////////////////////////////////////////////////////////////////////////////	
+a
+	cf ctp-v2.c
+b
+	
+      1097 |44321111111111111111|  paniers dispos 0/4  |  cabines dispos 1/2  |
+      1337 |66441111111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      1462 |  662211111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+      1650 |    2323111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
+////////////////////////////////////////////////////////////////////////////////
+// Question 9
+////////////////////////////////////////////////////////////////////////////////
+a - b
+    On peut utiliser pthread_exit(NULL);
+////////////////////////////////////////////////////////////////////////////////
+// Question 10
+////////////////////////////////////////////////////////////////////////////////
+La dérive temporelle est dû à la focntion usleep();
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Rendu final
+////////////////////////////////////////////////////////////////////////////////
+********************************
+* PRS - CTP V2 - Loïc Bourgois *
+********************************
+Légende 
+	. - Etat initial
+	1 - En attente d'un panier
+	2 - En attente d'une cabine
+	3 - Se change
+	4 - Se baigne
+	5 - En attente d'une cabine après baignade
+	6 - Se change après baignade
+	  - Terminé
+
+      1877 |3134..2.....................................................|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  1  |
+      2014 |41341.3......................................1..............|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  2  |
+      2141 |43 51.3.........1............................1..........1...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  1  |
+      2295 |63  1.5.........1............................2..........1...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  0  |
+      2488 | 4  3. ..1......1............................5..........3...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  1  |
+      2686 | 6  41 ..1.....11............................6..........4...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  2  |
+      2869 |    41 ..2.....13............................ ..........6...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  1  |
+      3177 |    53 ..3..1..14............................ .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  1  |
+      3362 |    63 .14.11..15............................ .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  1  |
+      3660 |     5 .16.11.146......1..................... .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  6  |  baignades  1  |
+      3803 |     6 116.12.15 ......1..................... .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  7  |  baignades  0  |
+      3953 |       14 .33.15 ......1..................... .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  1  |
+      4061 |       14 .44.16 ......1..................... .......... ...|  paniers dispos 0/ 4  |  cabines dispos 1/ 2  |  attentes  3  |  baignades  3  |
+      4128 |       16 154.16 ......1..................... .......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  1  |
+      4313 |       1  165.2  ......3..................... 1......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  0  |
+      4409 |       1  166.2  ......4..................... 1......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  1  |
+      4506 |       2  1 6.3  ......4..................... 1......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  1  |
+      4644 |       3  6  .4  ......5..................... 1......... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  1  |
+      4749 |       4     .4  ...... ......3.............. 3..1...... ...|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  1  |  baignades  2  |
+      4871 |       5     .6  .....1 ......4.............. 3..1...... 1..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  1  |
+      4987 |       6     .   .1...1 ......4.............. 5..3...... 1..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  1  |
+      5147 |             .   .1.1.1 ......6.............. 5..4...... 3..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  1  |
+      5430 |             .   .2.1.3 ......6..............  ..4......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  1  |
+      5593 |             1   .2.3.3 .1.1.. .........1....  ..5......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  6  |  baignades  0  |
+      5883 |             1   .4.6.4 .1.3.. .........1....  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  2  |
+      5977 |             1   .4.6.6 .1.4.. ........11....  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  2  |
+      6138 |             3   .5. .  .1.5.. ........13....  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  0  |
+      6182 |             3   .5. .  .1.5.. ......1.13....  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  0  |
+      6303 |             4   .6. .  .1.6.. ......1.15..1.  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  1  |
+      6407 |             6   . . .  .2. .. ......1.26..1.  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  4  |  baignades  0  |
+      6600 |                 . 1 .  .3. 1. ......4.3 ..2.  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  1  |
+      6800 |                 . 1 .  .4. 1. ......6.4 ..3.  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  2  |
+      6984 |                 . 3 .  .4. 3. ...... .4 .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
+      7204 |                 1 4 .  .61 4. ...1.. .6 .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  2  |
+      7307 |                 1 5 1  .61 4. ...1.. .6 .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  5  |  baignades  1  |
+      7553 |                 2   1  . 2 6. ...3.. .  .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  3  |  baignades  0  |
+      7818 |                 3   3  . 4  . ...4.. .  .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
+      7928 |                 4   3  . 4  . ...6.. .  .. .  .. ......  ..|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
+      8060 |                 4   4  .    . ... .. .  .. .  .. ......  ..|  paniers dispos 2/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  2  |
+      8108 |                 6   6  .    . ... .. .  .. .  .. ......  ..|  paniers dispos 2/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  0  |
+      8173 |                     6  .    3 ... .. .  .. .  .. ......  ..|  paniers dispos 2/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  0  |
+      8359 |                        .    4 ... .. .  .. .  .. ....4.  3.|  paniers dispos 1/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  2  |
+      8479 |                        .    4 ... .. .  .. .  .3 ....6.  4.|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
+      8684 |                        .    5 ... .3 .  .. .  .3 .... .  5.|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  0  |
+      8844 |                        .    6 ..1 .4 .  .. .  .4 .... .  6.|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  1  |  baignades  2  |
+      9019 |                        .      ..2 .6 .  .. .  .6 .... .   .|  paniers dispos 1/ 4  |  cabines dispos 0/ 2  |  attentes  1  |  baignades  0  |
+      9148 |                        2      ..3 26 .  .. .  .  .... .   .|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  0  |
+      9338 |                        4      ..4 4  .  .. .  .  .... .   .|  paniers dispos 1/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  3  |
+      9405 |                        4      ..6 4  .  .. .  .  .... .   .|  paniers dispos 1/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  2  |
+      9529 |                        6      ..  6  .  .2 .  .  .... .   .|  paniers dispos 1/ 4  |  cabines dispos 0/ 2  |  attentes  1  |  baignades  0  |
+      9622 |                               ..     .  .3 .  .  .... .   .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+      9729 |                               ..     .  .4 .  .  .... .   .|  paniers dispos 3/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  1  |
+      9782 |                               ..     .  .6 .  .  .... .   .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+      9831 |                               ..     .  .6 4  .  .... .   .|  paniers dispos 2/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  1  |
+      9965 |                               3.     .  .  4  .  .... 4   .|  paniers dispos 1/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  2  |
+     10075 |                               3.     .  .  5  .  .2.. 6   .|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  2  |  baignades  0  |
+     10258 |                               4.     .  2  6  .  .3..     .|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  1  |  baignades  1  |
+     10374 |                               4.     .  3     .  .4..     .|  paniers dispos 1/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  2  |
+     10497 |                                .     .  4     .  .4.3     .|  paniers dispos 1/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  2  |
+     10613 |                                .     .  4     .  . .4     .|  paniers dispos 2/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  2  |
+     10698 |                                .     .  6     .  . .4     .|  paniers dispos 2/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  1  |
+     10781 |                                .     .        .  . .6     .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     10883 |                                4     .        .  . 3      .|  paniers dispos 2/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  1  |
+     10993 |                                4     .        .  . 4      .|  paniers dispos 2/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  2  |
+     11079 |                                6     .        .  . 4      .|  paniers dispos 2/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  1  |
+     11172 |                                      .        .  . 6      .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     11240 |                                      .        .  3        .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     11382 |                                      4        .  6        .|  paniers dispos 2/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  1  |
+     11455 |                                      6        .  6        .|  paniers dispos 2/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  0  |
+     11533 |                                               .           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     11603 |                                               3           .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     11708 |                                               6           .|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     11762 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     11810 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     11870 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     11918 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     11967 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12017 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12066 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12115 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12164 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12212 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12262 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12313 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12368 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12417 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12467 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12515 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12574 |                                                           .|  paniers dispos 4/ 4  |  cabines dispos 2/ 2  |  attentes  0  |  baignades  0  |
+     12657 |                                                           3|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     12736 |                                                           6|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+     12783 |                                                           6|  paniers dispos 3/ 4  |  cabines dispos 1/ 2  |  attentes  0  |  baignades  0  |
+
