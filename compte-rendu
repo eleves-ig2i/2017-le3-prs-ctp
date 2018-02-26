@@ -15,10 +15,10 @@ a
 b
 	-
 c
-Temps		   |états				|paniers				|cabines	
+Temps		   |états				|paniers				|cabines
 	      1158 |634.4...............|  paniers dispos 0/ 4  |  cabines dispos 0/ 2  |  attentes  0  |  baignades  2  |
 d
-	-	
+	-
 ////////////////////////////////////////////////////////////////////////////////
 // Question 3
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,7 @@ c
 	*****************************
 	* PRS - CTP - Loïc Bourgois *
 	*****************************
-	Légende 
+	Légende
 		0 - Etat initial
 		1 - En attente d'un panier
 		2 - En attente d'une cabine
@@ -77,7 +77,7 @@ d
 ////////////////////////////////////////////////////////////////////////////////
 // Question 4
 ////////////////////////////////////////////////////////////////////////////////
-a 
+a
 	-
 b
 	cf ctp-v2.c
@@ -85,7 +85,7 @@ c
 	********************************
 	* PRS - CTP V2 - Loïc Bourgois *
 	********************************
-	Légende 
+	Légende
 		0 - Etat initial
 		1 - En attente d'un panier
 		2 - En attente d'une cabine
@@ -196,15 +196,15 @@ c
       6793 |       6     6      |  paniers dispos 2/4  |  cabines dispos 0/2  |
       6851 |                    |  paniers dispos 4/4  |  cabines dispos 2/2  |
 d
-	La macro-fonction est plus rapide qu'une fonction classique : en effet, à 
+	La macro-fonction est plus rapide qu'une fonction classique : en effet, à
 	la compilation, le code est totalement dupliqué.
 ////////////////////////////////////////////////////////////////////////////////
 // Question 8
-////////////////////////////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////////////////////////////
 a
 	cf ctp-v2.c
 b
-	
+
       1097 |44321111111111111111|  paniers dispos 0/4  |  cabines dispos 1/2  |
       1337 |66441111111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
       1462 |  662211111111111111|  paniers dispos 0/4  |  cabines dispos 0/2  |
@@ -230,7 +230,7 @@ La dérive temporelle est dû à la focntion usleep();
 ********************************
 * PRS - CTP V2 - Loïc Bourgois *
 ********************************
-Légende 
+Légende
 	. - Etat initial
 	1 - En attente d'un panier
 	2 - En attente d'une cabine
