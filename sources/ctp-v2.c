@@ -45,14 +45,14 @@ typedef struct {
 typedef struct {
 		int id;
 		int durationMilli;
-	char bob[8]; 
+	char bob[8];
 } State;
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Affichage
 ////////////////////////////////////////////////////////////////////////////////
-void displaying(Client ** clients, int totalClientCount, 
+void displaying(Client ** clients, int totalClientCount,
 		int totalCabineCount, int totalPanierCount, int * go) {
 	int i = 0;
 	int panierCount = totalPanierCount;
@@ -157,7 +157,7 @@ void * clientFunction(void * client_) {
 	pthread_exit(NULL);
 }
 
-void initSemaphores(sem_t * cabines, sem_t * paniers, 
+void initSemaphores(sem_t * cabines, sem_t * paniers,
 		int totalCabineCount, int totalPanierCount) {
 	sem_init(cabines, 0, totalCabineCount);
 	sem_init(paniers, 0, totalPanierCount);
@@ -176,9 +176,9 @@ void startThreads(pthread_t * threads, sem_t * cabines, sem_t * paniers,
 		clients[i]->isInCabine = 0;
 		clients[i]->hasPanier = 0;
 		// Launch thread
-		pthread_create(&threads[i], 
-			NULL, 
-			clientFunction, 
+		pthread_create(&threads[i],
+			NULL,
+			clientFunction,
 			(void *)(clients[i]));
 	}
 }
