@@ -105,7 +105,7 @@ void displaying2(Client ** clients, int totalClientCount,
 				}
 				default: {
 					printf("ZZZ %d ZZZ", clients[i]->id);
-					break;			
+					break;
 				}
 			}
 			panierCount -= clients[i]->hasPanier;
