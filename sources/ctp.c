@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-//	Pour lancer le client : 
+//	Pour lancer le client :
 //			clear ; make clean ; make ; ./bin/client 127.0.0.1 3000
 ////////////////////////////////////////////////////////////////////////////////
 //#include "constants.h"
@@ -41,14 +41,14 @@ typedef struct {
 typedef struct {
 		int id;
 		int durationMilli;
-	char bob[8]; 
+	char bob[8];
 } State;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Affichage
 ////////////////////////////////////////////////////////////////////////////////
 void displaying(int * cabineCount, int * panierCount) {
-	int go = 1;	
+	int go = 1;
 	while(go) {
 				usleep(500*1000);
 		printf("\n\n------------------------------------------\n\n");
@@ -59,9 +59,9 @@ void displaying(int * cabineCount, int * panierCount) {
 	}
 }
 
-void displaying2(Client ** clients, int totalClientCount, 
+void displaying2(Client ** clients, int totalClientCount,
 		int totalCabineCount, int totalPanierCount) {
-	int go = 1;	
+	int go = 1;
 	int i = 0;
 	int panierCount = totalPanierCount;
 	int cabineCount = totalCabineCount;
@@ -105,7 +105,7 @@ void displaying2(Client ** clients, int totalClientCount,
 				}
 				default: {
 					printf("ZZZ %d ZZZ", clients[i]->id);
-					break;				
+					break;			
 				}
 			}
 			panierCount -= clients[i]->hasPanier;
@@ -132,7 +132,7 @@ void * clientFunction(void * client_) {
 	client->stateId = STATE_WAITING_FOR_CABINE;
 	sem_wait(client->cabines);
 	client->isInCabine = 1;
-	
+
 	client->stateId = STATE_WAITING_FOR_PANIER;
 	sem_wait(client->paniers);
 	client->hasPanier = 1;
@@ -160,7 +160,7 @@ void * clientFunction(void * client_) {
 	return 0;
 }
 
-void initSemaphores(sem_t * cabines, sem_t * paniers, 
+void initSemaphores(sem_t * cabines, sem_t * paniers,
 		int totalCabineCount, int totalPanierCount) {
 	/*int i;
 		for(i = 0 ; i < totalCabineCount ; i++) {
@@ -186,9 +186,9 @@ void startThreads(pthread_t * threads, sem_t * cabines, sem_t * paniers,
 		clients[i]->isInCabine = 0;
 		clients[i]->hasPanier = 0;
 		// Launch thread
-		pthread_create(&threads[i], 
-			NULL, 
-			clientFunction, 
+		pthread_create(&threads[i],
+			NULL,
+			clientFunction,
 			(void *)(clients[i]));
 	}
 }
