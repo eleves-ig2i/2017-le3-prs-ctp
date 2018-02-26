@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "8"
-
 script:
   - npm install linteverything@latest
+  - printf "module.exports={ignore:['node_modules','package-lock.json','.git','.travis.yml'],verbose:true};" > .linteverythingrc.js
   - node ./node_modules/linteverything/bin/linteverything.js
